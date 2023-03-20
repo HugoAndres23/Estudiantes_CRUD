@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles/main.css">
+  <script src="https://kit.fontawesome.com/2d691c4e69.js" crossorigin="anonymous"></script>
+  <title>Estudiantes CRUD</title>
+</head>
+
+<body>
+  <header>
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="index.html">Estudiantes</a>
+      </div>
+    </nav>
+  </header>
+  <main class="main-content">
+    <div class="crud-container">
+      <div class="crud-header">
+        <h1>Estudiantes Registrados</h1>
+        <button class="button is-success" id="AbrirRegistro">
+          <i class="fas fa-plus"></i><span>Nuevo Estudiante</span></button>
+      </div>
+      <table class="table" >
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Nombres</th>
+            <th>Primer Apellido</th>
+            <th>Segundo Apellido</th>
+            <th>Telefono</th>
+            <th>Correo</th>
+            <th>Opciones</th>
+          </tr>
+        </thead>
+        <tbody id="table">
+
+        </tbody>
+      </table>
+    </div>
+  </main>
+  <div class="modal" id="modal">
+    <div class="modal-background"></div>
+    <div class="modal-card">
+      <header class="modal-card-head">
+        <p class="modal-card-title">Registrar Nuevo Estudiante</p>
+        <button class="delete" aria-label="close" id="cerrarModal"></button>
+      </header>
+      <section class="modal-card-body">
+        <form id="formularioR">
+          <div class="field">
+            <label class="label">Nombres : </label>
+            <div class="control">
+              <input type="hidden" name="id" id="inputId">
+              <input class="input" type="text" name="Nombre" id="nombre" placeholder="Ingresa tus nombres">
+            </div>
+          </div>
+          <div class="field">
+            <label class="label">Primer Apellido : </label>
+            <div class="control">
+              <input class="input" type="text" name="Apellido1" id="apellido1" placeholder="Ingresa tu primer apellido">
+            </div>
+          </div>
+          <div class="field">
+            <label class="label">Segundo Apellido : </label>
+            <div class="control">
+              <input class="input" type="text" name="Apellido2" id="apellido2" placeholder="Ingresa tu segundo apellido">
+            </div>
+          </div>
+          <div class="field">
+            <label class="label">Telefono : </label>
+            <div class="control has-icons-left">
+              <input class="input" type="tel" name="Telefono" id="telefono" placeholder="+57 3117489883">
+              <span class="icon is-small is-left">
+                <i class="fas fa-phone"></i>
+              </span>
+            </div>
+          </div>
+          <div class="field">
+            <label class="label">Correo Electronico : </label>
+            <div class="control has-icons-left">
+              <input class="input" type="email" name="Correo" id="correo" placeholder="nombres@gmail.com">
+              <span class="icon is-small is-left">
+                <i class="fas fa-envelope"></i>
+              </span>
+            </div>
+          </div>
+      </section>
+      <footer class="modal-card-foot">
+        <button type="submit" class="button is-success">
+          <i class="fas fa-save"></i><span>Guardar</span></button>
+        </form>
+      </footer>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+  <script src="js/client.js"></script>
+  <script src="js/app.js"></script>
+</body>
+
+</html>
